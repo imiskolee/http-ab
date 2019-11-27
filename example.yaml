@@ -1,0 +1,16 @@
+common: &common
+  uri: "?format=json"
+  method: GET
+  content_type: application/json
+  headers:
+    FOO: BAR
+
+mainly:
+  <<: *common
+  url: https://api.ipify.org
+
+secondly:
+  <<: *common
+  url: https://api6.ipify.org
+
+response_parser: json
